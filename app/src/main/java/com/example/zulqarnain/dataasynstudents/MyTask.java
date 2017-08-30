@@ -23,10 +23,8 @@ public class MyTask extends AsyncTask<String, Void,ArrayList<Students>> {
     ArrayList<Students> studentList = new ArrayList<>();
 
     Context context;
-    TextView textView;
-    MyTask(Context context , TextView textView){
+    MyTask(Context context ){
         this.context=context;
-        this.textView = textView;
     }
 
 
@@ -51,7 +49,7 @@ public class MyTask extends AsyncTask<String, Void,ArrayList<Students>> {
         for(int i=0 ; i<students.length;i++){
             studentList.add(students[i]);
         }
-        
+
         return studentList;
     }
 
