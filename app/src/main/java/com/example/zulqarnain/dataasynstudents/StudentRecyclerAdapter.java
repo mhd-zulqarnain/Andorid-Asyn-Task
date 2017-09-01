@@ -7,8 +7,12 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.R.attr.width;
 
 /**
  * Created by Zul Qarnain on 8/30/2017.
@@ -16,9 +20,10 @@ import java.util.List;
 
 public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentviewHolder> {
     List mStudents;
-    StudentRecyclerAdapter(List<Students> mStudents){;
+    Context context;
+    StudentRecyclerAdapter(Context context,List<Students> mStudents){;
         this.mStudents = mStudents;
-
+        this.context=context;
     }
 
     @Override
@@ -29,11 +34,9 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentviewHold
 
     @Override
     public void onBindViewHolder(StudentviewHolder holder, int position) {
-        Students students = (Students) mStudents.get(position);
-        holder.stName.setText(students.getFirst_name());
-        holder.stEmail.setText(students.getEmail());
-        holder.stIP.setText( "IP:"+students.getEmail());
 
+        Students student = (Students) mStudents.get(position);
+        holder.bindView(student);
     }
 
     @Override

@@ -13,6 +13,16 @@ public class Students {
     String gender;
     String ip_address;
 
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
+    }
+
+    String img_url;
+
     public int getId() {
         return id;
     }

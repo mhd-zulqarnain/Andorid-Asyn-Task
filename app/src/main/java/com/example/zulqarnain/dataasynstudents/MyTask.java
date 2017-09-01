@@ -56,7 +56,6 @@ public class MyTask extends AsyncTask<String, Void,ArrayList<Students>> {
     @Override
     protected void onPostExecute(ArrayList<Students> studentses) {
         communicator.getStudents(studentses);
-        Log.d("size ", "onPostExecute: "+studentses.size());
     }
 
     public void setCommunicator(Communicator communicator) {

@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             public void onClick(View view) {
                 MyTask task = new MyTask(MainActivity.this);
                 task.setCommunicator(MainActivity.this);
-                task.execute("https://api.myjson.com/bins/1fqq85");
-
+                task.execute("https://api.myjson.com/bins/upwut");
             }
         });
     }
@@ -46,9 +45,8 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     public void updateUI() {
-        Log.d("view", "sending: "+"----------------------------------------"+list.size());
 
-        StudentRecyclerAdapter adapter= new StudentRecyclerAdapter(list);
+        StudentRecyclerAdapter adapter= new StudentRecyclerAdapter(MainActivity.this,list);
         mRecycler.setAdapter(adapter);
     }
 }
