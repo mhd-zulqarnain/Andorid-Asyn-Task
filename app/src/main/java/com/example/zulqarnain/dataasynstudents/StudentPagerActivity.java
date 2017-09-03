@@ -50,7 +50,7 @@ public class StudentPagerActivity extends AppCompatActivity implements Communica
     public void startAsynTask() throws ExecutionException, InterruptedException {
         MyTask task = new MyTask(StudentPagerActivity.this);
         task.setCommunicator(StudentPagerActivity.this);
-        task.execute("https://api.myjson.com/bins/upwut").get();
+        task.execute("https://api.myjson.com/bins/a3jmh").get();
     }
 
     @Override
@@ -71,6 +71,11 @@ public class StudentPagerActivity extends AppCompatActivity implements Communica
             public int getCount() {
                 return list.size();
             }
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return list.get(position).getFirst_name();
+            }
+
         });
     }
 

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements Communicator {
 
     ArrayList<Students> list;
-    Button myButton;
+    
     RecyclerView mRecycler;
 
     @Override
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myButton = (Button) findViewById(R.id.button_response);
+
         mRecycler = (RecyclerView) findViewById(R.id.my_Recycler);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
         startAsynTask();
@@ -46,6 +46,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     public void startAsynTask(){
         MyTask task = new MyTask(MainActivity.this);
         task.setCommunicator(MainActivity.this);
-        task.execute("https://api.myjson.com/bins/upwut");
+        task.execute("https://api.myjson.com/bins/a3jmh");
     }
 }

@@ -1,85 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:id="@+id/detail_activity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/st_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:text="Details"
-
-
-        android:textAppearance="?android:attr/textAppearance" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="12dp"
-        android:background="@android:color/darker_gray" />
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-
+        android:padding="34dp"
+        android:id="@+id/image_view"
+        android:src="@drawable/ic_action_ip"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="12dp"
-        android:background="@android:color/darker_gray" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
 
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingTop="5dp"
-                android:text="Loading...."
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/tEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearance" />
-
-
-            <TextView
-                android:id="@+id/tGender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearance" />
-            <TextView
-                android:id="@+id/tIPAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearance" />
-
-        </LinearLayout>
+            android:src="@mipmap/ic_person"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingTop="5dp"
+            android:id="@+id/tName"
+            android:text="Test text"
+            android:textSize="20sp"
+            />
 
     </LinearLayout>
+    <View
+        style="@style/Divider"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="13dp"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_mail"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingTop="5dp"
+            android:text="Test text"
+            android:textSize="18sp"
+            android:id="@+id/tEmail"
+            />
+
+    </LinearLayout>
+    <View
+        style="@style/Divider"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="13dp"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingTop="5dp"
+            android:text="Test text"
+            android:textSize="15sp"
+            android:id="@+id/tGender"
+            />
+
+    </LinearLayout>
+
+    <View
+        style="@style/Divider"/> <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="13dp"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_ip"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingTop="5dp"
+            android:text="Test text"
+            android:textSize="15sp"
+            android:id="@+id/tIPAddress"
+
+            />
+
+    </LinearLayout>
+
+    <View
+        style="@style/Divider"/>
 </LinearLayout>

@@ -1,18 +1,12 @@
 package com.example.zulqarnain.dataasynstudents;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -51,11 +45,11 @@ public class DetailFragment extends Fragment implements Communicator {
 
         MyTask task = new MyTask(container.getContext());
         task.setCommunicator(this);
-        task.execute("https://api.myjson.com/bins/upwut");
+        task.execute("https://api.myjson.com/bins/a3jmh");
         stName = (TextView) view.findViewById(R.id.tName);
         stEmail = (TextView) view.findViewById(R.id.tEmail);
         stIP = (TextView) view.findViewById(R.id.tIPAddress);
-        stID = (TextView) view.findViewById(R.id.st_id);
+//        stID = (TextView) view.findViewById(R.id.st_id);
         stGender = (TextView) view.findViewById(R.id.tGender);
         stImage = (ImageView) view.findViewById(R.id.image_view);
 
@@ -75,7 +69,7 @@ public class DetailFragment extends Fragment implements Communicator {
         stName.setText(students.getFirst_name() + " " + students.getFirst_name());
         stEmail.setText(students.getEmail());
         stIP.setText(students.getIp_address());
-        stID.setText("Details :" + students.getId());
+//        stID.setText("Details :" + students.getId());
         stGender.setText(students.getGender());
         Picasso.with(getActivity()).load(students.getImg_url()).into(stImage);
 
