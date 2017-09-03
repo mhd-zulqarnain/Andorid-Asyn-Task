@@ -21,19 +21,13 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         myButton = (Button) findViewById(R.id.button_response);
         mRecycler = (RecyclerView) findViewById(R.id.my_Recycler);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
-
+        startAsynTask();
         list = new ArrayList<>();
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MyTask task = new MyTask(MainActivity.this);
-                task.setCommunicator(MainActivity.this);
-                task.execute("https://api.myjson.com/bins/upwut");
-            }
-        });
+
     }
 
 
@@ -45,8 +39,13 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     public void updateUI() {
-
         StudentRecyclerAdapter adapter= new StudentRecyclerAdapter(MainActivity.this,list);
         mRecycler.setAdapter(adapter);
+    }
+
+    public void startAsynTask(){
+        MyTask task = new MyTask(MainActivity.this);
+        task.setCommunicator(MainActivity.this);
+        task.execute("https://api.myjson.com/bins/upwut");
     }
 }

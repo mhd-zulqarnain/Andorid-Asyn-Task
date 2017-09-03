@@ -1,8 +1,10 @@
 package com.example.zulqarnain.dataasynstudents;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -22,6 +24,7 @@ public class MyTask extends AsyncTask<String, Void,ArrayList<Students>> {
     Communicator communicator;
     ArrayList<Students> studentList = new ArrayList<>();
 
+    ProgressDialog progressDialog;
     Context context;
     MyTask(Context context ){
         this.context=context;
@@ -56,6 +59,16 @@ public class MyTask extends AsyncTask<String, Void,ArrayList<Students>> {
     @Override
     protected void onPostExecute(ArrayList<Students> studentses) {
         communicator.getStudents(studentses);
+        progressDialog.dismiss();
+    }
+
+    @Override
+    protected void onPreExecute() {
+
+        progressDialog = ProgressDialog.show(context,
+                "ProgressDialog",
+                "Waiting for data");
+
     }
 
     public void setCommunicator(Communicator communicator) {

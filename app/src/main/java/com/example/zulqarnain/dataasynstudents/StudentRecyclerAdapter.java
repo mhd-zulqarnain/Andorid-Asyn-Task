@@ -41,7 +41,6 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentviewHold
 
     @Override
     public int getItemCount() {
-        Log.d("view", "get: "+"----------------------------------------"+mStudents.size());
         return mStudents.size();
 
     }

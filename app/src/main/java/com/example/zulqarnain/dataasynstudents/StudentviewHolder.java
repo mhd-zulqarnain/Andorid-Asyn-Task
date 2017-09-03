@@ -17,7 +17,7 @@ import java.util.List;
  * Created by Zul Qarnain on 8/30/2017.
  */
 
-public class StudentviewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class StudentviewHolder extends RecyclerView.ViewHolder {
     TextView stName;
     TextView stEmail;
     TextView stIP;
@@ -46,15 +46,10 @@ public class StudentviewHolder extends RecyclerView.ViewHolder implements View.O
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = DetailActivity.newInstance(context,student.getId());
+                Intent intent = StudentPagerActivity.newInstance(context,student.getId());
                 context.startActivity(intent);
             }
         });
-
-    }
-
-    @Override
-    public void onClick(View view) {
 
     }
 }
